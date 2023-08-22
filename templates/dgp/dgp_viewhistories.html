@@ -1,0 +1,53 @@
+{% extends 'dgp/dgp_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Case Histories</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+    <div class="row">
+        {% for history in histories %}
+        <div class="col-sm-6">
+          <div class="card " style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;width: 70%; text-align: center; padding: 1px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Complaintid: {{history.complaintid}}</b></h5>
+                <h5 class="card-title"><b>Mode: {{history.crime_mode}}</b></h5>
+                <p class="card-text">Description: {{history.crime_desc}}</p>
+                <p class="card-text">Date: {{history.complaint_date}}</p>
+                <br>
+                <h5 class="card-title"><b>Victim Name: {{history.public.f_name}} {{history.public.l_name}}</b></h5>
+                <p class="card-text">Victim Phone: {{history.public.phone}}</p>
+                <p class="card-text">Victim Email: {{history.public.email}}</p>
+                <p class="card-text">Victim District: {{history.public.district}}</p>
+                <br>
+                <h5 class="card-title"><b>Accused Name: {{history.criminal.fname}} {{history.criminal.lname}}</b></h5>
+                <p class="card-text">Accused Father's Name: {{history.criminal.father_name}}</p>
+                <p class="card-text">Accused Address: {{history.criminal.address}}</p>
+                <p class="card-text">Accused Age & Sex: {{history.criminal.age}},{{history.criminal.sex}}</p>
+                <br>
+                {% if closed.witness_fname %}
+                    <h5 class="card-title"><b>Witness Name: {{history.witness_fname}} {{history.witness_lname}}</b></h5>
+                    <p class="card-text">Witness Phone: {{history.witness_phone}}</p>
+                    <p class="card-text">Witness Email: {{history.witness_email}}</p>
+                    <p class="card-text">Witness District: {{history.witness_district}}</p>
+                {% else %}
+                <h2>Witness Details Not Found</h2>
+                {% endif %}
+                <br>
+                <h5 class="card-title"><b>Arrested Station Name: {{history.station.station_name}}</b></h5>
+                <p class="card-text">Station Phone: {{history.station.phone}}</p>
+                <p class="card-text">Station Office Address: {{history.station.office_address}}</p>
+                <p class="card-text">Station Email: {{history.station.email}}</p>
+                <br>
+                
+                <a href="../../static/media/{{history.fir_upload}}" download="">Download FIR</a>
+              
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    
+</div>
+{% endblock %}

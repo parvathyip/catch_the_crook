@@ -1,0 +1,42 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Witness</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+   
+    <form method="post" >
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="witness-first-name">Witness First Name</label>
+        <input type="text" class="form-control" name="wfname"  placeholder="Enter first name">
+      </div>
+      <div class="form-group">
+        <label for="witness-first-name">Witness Last Name</label>
+        <input type="text" class="form-control" name="wlname"  placeholder="Enter last name">
+      </div>
+      <div class="form-group">
+        <label for="witness-first-name">Witness Phone</label>
+        <input type="text" class="form-control" name="wphone"  placeholder="Enter phone">
+      </div>
+      <div class="form-group">
+        <label for="witness-first-name">Witness Email</label>
+        <input type="email" class="form-control" name="wemail"  placeholder="Enter email">
+      </div>
+      <select  name="wdistrict">
+        <option value="" selected disabled>Enter District</option>
+        <option value="thiruvananthapuram">thiruvananthapuram</option>
+        <option value="kollam">kollam</option>
+        <option value="pattanamthitta">pattanamthitta</option>
+        <option value="alapuzha">alapuzha</option>
+        <option value="kottayam">kottayam</option>
+        <option value="idukki">idukki</option>
+        <option value="ernakulam">ernakulam</option>
+      </select><br>
+      <button style="margin-top: 4px;" type="submit" >Add</button>
+      
+    </form>
+  </div>
+
+{% endblock %}

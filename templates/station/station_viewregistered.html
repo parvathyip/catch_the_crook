@@ -1,0 +1,33 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+  <h3>Registered complaints</h3>
+  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+<div class="contact-bottom">
+
+<div class="row">
+    {% for complaint in reg_complaints %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{complaint.complaintid}}</h5>
+          <!-- <p><img src="../../static/media/{{dgp.image}}" class="img"></p> -->
+          <p  class="card-text">{{complaint.crime_mode}}</p>
+          <p  class="card-text">{{complaint.crime_desc}}</p>
+          <p  class="card-text">Victim :&nbsp;{{complaint.public.f_name}}&nbsp;{{complaint.public.l_name}}</p>
+          <p  class="card-text">Victim Phone:&nbsp;{{complaint.public.phone}}</p>
+          <p  class="card-text">Victim Email:&nbsp;{{complaint.public.email}}</p>
+          <p style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <a href="/station-searchcriminal?id={{complaint.id}}&crime_mode={{complaint.crime_mode}}">Search similar</a>
+            <!-- <a href="/station-withdrawcomplaint?id={{complaint.id}}&complaint_status={{complaint.complaint_status}}" class="del">close</a> -->
+        </p>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="/station-viewcomplaints">back</a>
+  </div>
+{% endblock %}

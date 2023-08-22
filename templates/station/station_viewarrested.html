@@ -1,0 +1,50 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Arrested Cases</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+    <div class="row">
+        {% for arrest in arrests %}
+        <div class="col-sm-6">
+          <div class="card " style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;width: 70%; text-align: center; padding: 1px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Complaintid: {{arrest.complaintid}}</b></h5>
+                <h5 class="card-title"><b>Mode: {{arrest.crime_mode}}</b></h5>
+                <p class="card-text">Description: {{arrest.crime_desc}}</p>
+                <p class="card-text">Date: {{arrest.complaint_date}}</p>
+                <br>
+                <h5 class="card-title"><b>Victim Name: {{arrest.public.f_name}} {{arrest.public.l_name}}</b></h5>
+                <p class="card-text">Victim Phone: {{arrest.public.phone}}</p>
+                <p class="card-text">Victim Email: {{arrest.public.email}}</p>
+                <p class="card-text">Victim District: {{arrest.public.district}}</p>
+                <br>
+                <h5 class="card-title"><b>Accused Name: {{arrest.criminal.fname}} {{arrest.criminal.lname}}</b></h5>
+                <p class="card-text">Accused Father's Name: {{arrest.criminal.father_name}}</p>
+                <p class="card-text">Accused Address: {{arrest.criminal.address}}</p>
+                <p class="card-text">Accused Age & Sex: {{arrest.criminal.age}},{{arrest.criminal.sex}}</p>
+                <br>
+                {% if arrest.witness_fname %}
+                    <h5 class="card-title"><b>Witness Name: {{arrest.witness_fname}} {{arrest.witness_lname}}</b></h5>
+                    <p class="card-text">Witness Phone: {{arrest.witness_phone}}</p>
+                    <p class="card-text">Witness Email: {{arrest.witness_email}}</p>
+                    <p class="card-text">Witness District: {{arrest.witness_district}}</p>
+                {% else %}
+                    <a href="/station-addwitness?cid={{arrest.id}}" class="btn btn-outline-secondary">Add Witness</a>
+                {% endif %}
+                <br>
+                <h5 class="card-title"><b>Arrested Station Name: {{arrest.station.station_name}}</b></h5>
+                <p class="card-text">Station Phone: {{arrest.station.phone}}</p>
+                <p class="card-text">Station Office Address: {{arrest.station.office_address}}</p>
+                <p class="card-text">Station Email: {{arrest.station.email}}</p>
+                <br>
+                <a href="/station-closecase?cid={{arrest.id}}" style="margin-bottom: 1px;">Close</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="/station-viewcomplaints">back</a>
+</div>
+{% endblock %}

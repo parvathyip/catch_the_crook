@@ -1,0 +1,37 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Wanted Criminal</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="lname" placeholder="Last Name">
+        <input type="text" name="fathername" placeholder="Fathers Name">	
+        <input type="text" name="age" placeholder="age">
+        <select name="sex" >
+            <option value="" selected disabled>Enter sex</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>	
+        <textarea placeholder="Write address here..." name="address" rows="4" cols="50"></textarea>
+        <select name="crime_mode" >
+            <option value="" selected disabled>Add Mode of crime</option>
+            <option value="Robery">Robery</option>
+            <option value="Posco">Posco</option>
+            <option value="Rape">Rape</option>
+            <option value="Snatch">Snatch</option>
+            <option value="Public Nuisance">Public Nuisance</option>
+            <option value="Drugs, Liquor etc">Drugs, Liquor etc</option>
+            <option value="Illegal Exploitation of sand, rock etc.">Illegal Exploitation of sand, rock etc.</option>
+            <option value="Offences against women">Offences against women</option>
+        </select>	
+        <input type="file" name="images" multiple> 
+        <textarea placeholder="Write crime description here..." name="crime_desc" rows="4" cols="50"></textarea><br>	
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+    <div class="clearfix"></div>	
+{% endblock %}

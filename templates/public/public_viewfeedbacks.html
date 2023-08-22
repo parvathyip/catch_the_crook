@@ -1,0 +1,28 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>View Feedbacks</h3>
+</div>
+<div class="contact-bottom">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Criminal Name</th>
+            <th scope="col">Mode of crime</th>
+            <th scope="col">Your Feedback</th>
+            <th scope="col">View more</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for feedback in feedbacks %}
+          <tr>
+            <th scope="row">{{feedback.wanted.fname}} {{feedback.wanted.lname}}</th>
+            <td>{{feedback.wanted.mode_of_crime}}</td>
+            <td>{{feedback.feedback}}</td>
+            <td><a href="/public-viewcriminaldetail?id={{feedback.wanted.id}}" >viewmore</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

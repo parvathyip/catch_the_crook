@@ -1,0 +1,34 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<style>
+    .img{
+        float: left;
+    width:  120px;
+    height: 120px;
+    object-fit: cover;
+    }
+    .col-container {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
+  padding: 16px;
+}
+</style>
+<div style="text-align: center; font-weight: 900;">View missings</div>
+<div class="row">
+    {% for missing in missings %}
+    <div class="col-sm-6 col-container">
+      <div class="card col" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;width: 70%; text-align: center;">
+        <div class="card-body">
+          <h5 class="card-title"><img class="img" src="../../static/media/{{missing.missing_image}}"></h5>
+          <p class="card-text">{{missing.missing_desc}}</p>
+          <p class="card-text">Complaint By; {{missing.public.f_name}} {{missing.public.l_name}}</p>
+          <!-- <a href="/station-viewcriminaldetail?id={{criminal.id}}" >viewmore</a> -->
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

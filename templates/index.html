@@ -1,0 +1,155 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catch The Crook</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Law Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700|Six+Caps' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</head>
+<body>
+
+	<div class="header-top">
+		<div class="container">
+			<div class="head-main">
+				<h3 ><a href="/" style="color: #9e6e4e !important;">Catch The Crook</a></h3>
+			</div>
+			
+			<div class="navigation">
+				 <nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/users-login">Login</a></li>
+						<li style=" padding-left: 11px; position: absolute; top: -10px; left: 75px;"><a href="">
+							<div class="dropdown">
+								<a id="my-dropdown" href="#" class=" dropdown-toggle" data-toggle="dropdown" style="color: #9e6e4e;">Complaint</a>
+							
+								<ul class="dropdown-menu">
+								   <li><a href="/public-newmissingcase">New User register missing case?</a></li>
+								   <li><a href="/public-newcomplaintcase">New User register complaint?</a></li>
+							  		<li><a href="/public-haveaccount">Already Account?</a></li>
+							
+								</ul>
+							
+							</div>
+						</a></li>
+						
+					</ul>
+				</div>
+			</nav>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	
+		<script>
+			$("span.menu").click(function(){
+				$(" ul.navig").slideToggle("slow" , function(){
+				});
+			});
+		</script>
+
+	<div class="banner">
+		<div class="container">
+			<div class="banner-top">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							
+						</ul>
+					</div>
+				</section>
+									  <script defer="" src="{% static 'js/jquery.flexslider.js' %}"></script>
+									  <script type="text/javascript">
+										$(function(){
+										 
+										});
+										$(window).load(function(){
+										  $('.flexslider').flexslider({
+											animation: "slide",
+											start: function(slider){
+											  $('body').removeClass('loading');
+											}
+										  });
+										});
+									  </script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cases">
+		<div class="container">
+			<div class="col-md-4 cases-left">
+				<h3>Experience</h3>
+				<img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+				<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
+			</div>
+			<div class="col-md-4 cases-left">
+				<h3>Resources</h3>
+				<img src="{% static 'images/9.jpg' %}" alt=" " class="img-responsive">
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+				<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
+			</div>
+			<div class="col-md-4 cases-left">
+				<h3>Cases</h3>
+				<img src="{% static 'images/6.jpg' %}" alt=" " class="img-responsive">
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+				<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- footer-starts -->
+	<div class="footer">
+		<div class="container">
+				<div class="col-md-4 contact-left">
+				<h4>Address</h4>
+					<div class="cont-tp">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true">
+					</span></div>
+					
+					<address>
+						  795 Folsom Ave, Suite 600<br>
+						  San Francisco, CA 94107<br>
+						  <abbr title="Phone">P :</abbr> (123) 456-7890
+						</address>
+				</div>
+				<div class="col-md-4 contact-left">
+				<h4>Phone/Fax</h4>
+					<div class="cont-tp">
+						<span class="glyphicon glyphicon-phone" aria-hidden="true">
+					</span></div>
+					
+					<p>Phone : +1234567890 </p>
+					<p>Phone : +1234567890 </p>
+					<p>Fax : +1234567890 </p>
+				</div>
+				<div class="col-md-4 contact-left">
+				
+				</div>
+				<div class="clearfix"></div>
+			
+			<div class="footer-text">
+				<p>© 2016 Law. All Rights Reserved | Design by  <a href="#" target="_blank">LCC</a> </p>
+			</div>
+		</div>
+	</div>
+	

@@ -1,0 +1,42 @@
+{% extends 'dgp/dgp_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Update DGP</h3>
+</div>	
+ <div class="contact-bottom">
+    {% for dgp in dgp %}
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="fname" value="{{dgp.fname}}" placeholder="First Name">	
+        <input type="text" name="lname" value="{{dgp.lname}}" placeholder="Last Name">
+        <input type="text" name="phone" value="{{dgp.phone}}" placeholder="Phone">
+        <input type="text" name="dgpimage" value="{{dgp.image}}" placeholder="Add Image" onfocus="(this.type='file')">
+        <select name="job_status" >
+            <option  selected disabled>Add Job Status</option>
+            <option value="State Police Chief">State Police Chief</option>
+            <option value="Law and Order">Law and Order</option>
+            <option value="Crime Branch">Crime Branch</option>
+            <option value="Intelligence">Intelligence</option>
+            <option value="Coastal Police">Coastal Police</option>
+            <option value="State Crime Records Beuro">State Crime Records Beuro</option>
+        </select>	
+        <textarea value="{{dgp.office_address}}" placeholder="Write office address here..." name="address" rows="4" cols="50"></textarea>
+        <select name="office_district" >
+            <option value="" selected disabled>Enter District</option>
+            <option value="thiruvananthapuram">thiruvananthapuram</option>
+            <option value="kollam">kollam</option>
+            <option value="pattanamthitta">pattanamthitta</option>
+            <option value="alapuzha">alapuzha</option>
+            <option value="kottayam">kottayam</option>
+            <option value="idukki">idukki</option>
+            <option value="ernakulam">ernakulam</option>
+        </select>	
+        <!-- <input type="email" name="email" placeholder="Email">	
+        <input type="password" name="password" placeholder="Password">-->	<br>
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+    {% endfor %}
+
+</div>
+    <div class="clearfix"></div>	
+{% endblock %}

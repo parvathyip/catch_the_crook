@@ -1,0 +1,42 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div style="display: flex; justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto;
+  /* background: #A0C5E8; */
+  padding: 10px 0;">
+  <a style="color: #9e6e4e;" href="/station-viewregistered">Registered</a>
+  <a style="color: #9e6e4e;" href="/station-viewarrested">Arrested</a>
+  <a style="color: #9e6e4e;" href="/station-viewclosed">Closed</a>
+  <a style="color: #9e6e4e;" href="/station-viewwithdrawed">Withdrawed</a>
+</div>
+<div class="contact-top">
+  <h3>New complaints</h3>
+  <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+<div class="contact-bottom">
+
+<div class="row">
+    {% for complaint in complaints %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{complaint.complaintid}}</h5>
+          <!-- <p><img src="../../static/media/{{dgp.image}}" class="img"></p> -->
+          <p  class="card-text">{{complaint.crime_mode}}</p>
+          <p  class="card-text">{{complaint.crime_desc}}</p>
+          <p  class="card-text">Victim :&nbsp;{{complaint.public.f_name}}&nbsp;{{complaint.public.l_name}}</p>
+          <p  class="card-text">Victim Phone:&nbsp;{{complaint.public.phone}}</p>
+          <p  class="card-text">Victim Email:&nbsp;{{complaint.public.email}}</p>
+          <p style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <a href="/station-registercomplaint?id={{complaint.id}}&complaint_status={{complaint.complaint_status}}">Register</a>
+            <a href="/station-withdrawcomplaint?id={{complaint.id}}&complaint_status={{complaint.complaint_status}}" class="del">Withdraw</a>
+        </p>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+{% endblock %}

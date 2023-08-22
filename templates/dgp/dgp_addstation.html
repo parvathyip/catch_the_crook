@@ -1,0 +1,30 @@
+{% extends 'dgp/dgp_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Station</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+<!-- <div class="col-md-6 contact-lft">
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25090.351787808224!2d-122.2569291!3d38.179845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80850c726b66df5b%3A0xfaee3a3990d21c4c!2sAmerican+Canyon%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1413272890200"></iframe>
+ </div>
+<h4>Address</h4>
+    <address>
+        795 Folsom Ave, Suite 600<br>
+        San Francisco, CA 94107<br>
+        <abbr title="Phone">P :</abbr> (123) 456-7890
+    </address>
+</div>	 -->
+ <div class="contact-bottom">
+     <form method="post" >
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Station Name">	
+        <input type="text" name="phone" placeholder="Phone">
+        <textarea placeholder="Write station address here..." name="address" rows="4" cols="50"></textarea>
+        <input type="email" name="email" placeholder="Email">	
+        <input type="password" name="password" placeholder="Password">	<br>			
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+    <div class="clearfix"></div>	
+{% endblock %}

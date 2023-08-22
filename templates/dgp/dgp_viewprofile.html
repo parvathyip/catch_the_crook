@@ -1,0 +1,44 @@
+{% extends 'dgp/dgp_dashboard.html' %}
+{% block content %}
+
+<style>
+    .img {
+        /* float: left; */
+        width:  100px;
+        height: 100px;
+        /* object-fit: cover; */
+    }
+    .up :hover{
+        background-color: yellow;
+    }
+    .del :hover{
+        background-color: red;
+    }
+   
+</style>
+<div style="text-align: center; font-weight: 900;">My Profile</div>
+
+<div class="row">
+    {% for dgp in dgp %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{dgp.fname}} {{dgp.lname}}</h5>
+          <p><img src="../../static/media/{{dgp.image}}" class="img"></p>
+          <p  class="card-text">{{dgp.phone}}</p>
+          <p  class="card-text">{{dgp.email}}</p>
+          <p  class="card-text">{{dgp.job_status}}</p>
+          <p  class="card-text">{{dgp.office_address}}</p>
+          <p  class="card-text">{{dgp.office_district}}</p>
+          <p style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;">
+             <!-- <a href="/dgp-updatedgp?id={{dgp.id}}" class="up">Update</a> -->
+           <!-- <a href="/admin-deletedgp?id={{dgp.id}}" class="del">Delete</a> -->
+        </p>
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

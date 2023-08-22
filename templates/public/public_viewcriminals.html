@@ -1,0 +1,19 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div style="text-align: center; font-weight: 900;">Wanted Criminals</div>
+<div class="row">
+    {% for criminal in criminals %}
+    <div class="col-sm-6">
+      <div class="card " style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;width: 70%; text-align: center;">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{criminal.fname}} {{criminal.lname}}</b></h5>
+          <p class="card-text">Age: {{criminal.age}} Sex: {{criminal.sex}}</p>
+          <p class="card-text">Mode: {{criminal.mode_of_crime}}</p>
+          <a href="/public-viewcriminaldetail?id={{criminal.id}}" >viewmore</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

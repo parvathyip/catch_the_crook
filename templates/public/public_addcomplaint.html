@@ -1,0 +1,32 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Complaint</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+     <form method="post" >
+        {% csrf_token %}
+        <select name="crime_mode" >
+            <option value="" selected disabled>Add Mode of crime</option>
+            <option value="Robery">Robery</option>
+            <option value="Posco">Posco</option>
+            <option value="Rape">Rape</option>
+            <option value="Snatch">Snatch</option>
+            <option value="Public Nuisance">Public Nuisance</option>
+            <option value="Drugs, Liquor etc">Drugs, Liquor etc</option>
+            <option value="Illegal Exploitation of sand, rock etc.">Illegal Exploitation of sand, rock etc.</option>
+            <option value="Offences against women">Offences against women</option>
+        </select>	
+        <textarea placeholder="Write description here..." name="crimedesc" rows="4" cols="50"></textarea>
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+    <div class="clearfix"></div>	
+
+    {% for m in messages %}
+          <script>
+            alert("{{m}}");
+          </script>
+          {% endfor %}
+{% endblock %}

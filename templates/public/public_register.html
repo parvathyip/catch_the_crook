@@ -1,0 +1,63 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Public</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+<!-- <div class="col-md-6 contact-lft">
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25090.351787808224!2d-122.2569291!3d38.179845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80850c726b66df5b%3A0xfaee3a3990d21c4c!2sAmerican+Canyon%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1413272890200"></iframe>
+ </div>
+<h4>Address</h4>
+    <address>
+        795 Folsom Ave, Suite 600<br>
+        San Francisco, CA 94107<br>
+        <abbr title="Phone">P :</abbr> (123) 456-7890
+    </address>
+</div>	 -->
+ <div class="contact-bottom">
+     <form method="post" >
+        {% csrf_token %}
+        <input type="text" name="fname" placeholder="First Name">	
+        <input type="text" name="lname" placeholder="Last Name">
+        <input type="text" name="phone" placeholder="Phone">
+        <!-- <input type="text" name="dob" placeholder="Date-of-birth" onfocus="(this.type='date')"> -->
+        <!-- <input type="text" name="dgpimage" placeholder="Add Image" onfocus="(this.type='file')"> -->
+        <!-- <select name="job_status" >
+            <option value="" selected disabled>Add Job Status</option>
+            <option value="State Police Chief">State Police Chief</option>
+            <option value="Law and Order">Law and Order</option>
+            <option value="Crime Branch">Crime Branch</option>
+            <option value="Intelligence">Intelligence</option>
+            <option value="Coastal Police">Coastal Police</option>
+            <option value="State Crime Records Beuro">State Crime Records Beuro</option>
+        </select>	 -->
+        <!-- <select name="job_zone" >
+            <option value="" selected disabled>Enter zone</option>
+            <option value="North">North</option>
+            <option value="West">West</option>
+            <option value="South">South</option>
+            <option value="East">East</option>
+        </select>	 -->
+        <!-- <textarea placeholder="Write office address here..." name="address" rows="4" cols="50"></textarea>
+        <select name="office_district" >
+            <option value="" selected disabled>Enter District</option>
+            <option value="thiruvananthapuram">thiruvananthapuram</option>
+            <option value="kollam">kollam</option>
+            <option value="pattanamthitta">pattanamthitta</option>
+            <option value="alapuzha">alapuzha</option>
+            <option value="kottayam">kottayam</option>
+            <option value="idukki">idukki</option>
+            <option value="ernakulam">ernakulam</option>
+        </select>	 -->
+        <!-- <input type="text" name="pincode" placeholder="Pincode"> -->
+        <input type="email" name="email" placeholder="Email">	
+        <input type="password" name="password" placeholder="Password">	<br>			
+        <!-- <input type="text" value="Email Address" placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Email Address';}">
+        <textarea placeholder="" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>	 -->
+        <!-- <input type="submit" class="submit-btn" value="Submit"> -->
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+    <div class="clearfix"></div>	
+{% endblock %}

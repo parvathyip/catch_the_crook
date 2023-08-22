@@ -1,0 +1,26 @@
+{% extends 'station/station_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Withdrawed Cases</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+    <div class="row">
+        {% for withdraw in withdraweds %}
+        <div class="col-sm-6">
+          <div class="card " style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;width: 70%; text-align: center;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Complaintid: {{withdraw.complaintid}}</b></h5>
+              <h5 class="card-title">Mode: {{withdraw.crime_mode}}</h5>
+              <p class="card-text">Description: {{withdraw.crime_desc}}</p>
+              <p class="card-text">Complaint given by: {{withdraw.public.f_name}} {{withdraw.public.l_name}}</p>
+              <p class="card-text">Contact: {{withdraw.public.phone}}</p>
+              <!-- <a href="/public-viewcriminaldetail?id={{criminal.id}}" >viewmore</a> -->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a href="/station-viewcomplaints">back</a>
+</div>
+{% endblock %}

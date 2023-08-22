@@ -1,0 +1,24 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Missing Case</h3>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla. Sed cursus ante dapibus diam. Sed nisi. Nulla. </p> -->
+</div>	
+ <div class="contact-bottom">
+     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <input type="text" name="missingdate" placeholder="Add missing date" onfocus="(this.type='date')"> -->
+
+        <input type="text" name="missingimage" placeholder="Add Image" onfocus="(this.type='file')">
+        <textarea placeholder="Write description here..." name="missingdesc" rows="4" cols="50"></textarea>
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+    <div class="clearfix"></div>	
+
+    {% for m in messages %}
+          <script>
+            alert("{{m}}");
+          </script>
+          {% endfor %}
+{% endblock %}

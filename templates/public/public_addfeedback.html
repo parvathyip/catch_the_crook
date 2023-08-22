@@ -1,0 +1,13 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+<div class="contact-top">
+    <h3>Add Feedback</h3>
+</div>
+<div class="contact-bottom">
+    <form method="post" >
+        {% csrf_token %}
+        <textarea placeholder="Write feedback here..." name="feedback" rows="4" cols="50"></textarea>
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>	
+</div>
+{% endblock %}

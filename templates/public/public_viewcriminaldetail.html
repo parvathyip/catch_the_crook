@@ -1,0 +1,42 @@
+{% extends 'public/public_dashboard.html' %}
+{% block content %}
+view criminal detail
+<style>
+    .img{
+        float: left;
+    width:  120px;
+    height: 120px;
+    object-fit: cover;
+    }
+</style>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Fathers name</th>
+        <th scope="col">Age & Sex</th>
+        <th scope="col">Address</th>
+        <th scope="col">Mode of crime</th>
+        <th scope="col">Crime Description</th>
+        <!-- <th scope="col">Arrested date</th> -->
+        <th scope="col">Images</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      
+        <td><b>{{details.fname}} {{details.lname}}</b></td>
+        <td>{{details.father_name}}</td>
+        <td>Age: {{details.age}} Sex: {{details.sex}}</td>
+        <td>{{details.address}}</td>
+        <td>{{details.mode_of_crime}}</td>
+        <td>{{details.crime_desc}}</td>
+        <!-- <td>{{details.date_of_arrest}}</td> -->
+        {% for images in criminal_images %}
+        <td><img class="img" src="../../static/media/{{images.wanted_images}}"></td>
+        {% endfor %}
+      </tr>
+      <tr><p>Had any bad experiences with this person?</p><a href="/public-addfeedback?cid={{details.id}}">share with us!</a></tr>
+    </tbody>
+  </table>
+{% endblock %}
